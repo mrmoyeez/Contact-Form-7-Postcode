@@ -138,7 +138,7 @@ function wpcf7_tg_pane_postcode( $contact_form, $args = '' )
 	{
 		$args = wp_parse_args( $args, array() );
 		$description = __( "Generate a form-tag for a spam-stopping postcode field. For more details, see %s.", 'contact-form-7-postcode' );
-		$desc_link = '<a href="https://wordpress.org/plugins/contact-form-7-postcode/" target="_blank">' . __( 'CF7 Postcode', 'contact-form-7-postcode' ) . '</a>';
+		$desc_link = '<a href="https://github.com/markhall1971/Contact-Form-7-Postcode" target="_blank">' . __( 'CF7 Postcode', 'contact-form-7-postcode' ) . '</a>';
 		?>
 		<div class="control-box">
 			<fieldset>
