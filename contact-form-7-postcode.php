@@ -70,6 +70,12 @@ function wpcf7_postcode_shortcode_handler( $tag )
 	$atts['validation_error'] = $validation_error;
 	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
 
+	$value = (string) reset( $tag->values );
+	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
+		$atts['placeholder'] = $value;
+		$value = '';
+	}
+
 	if ( $tag->is_required() )
 		$atts['aria-required'] = 'true';
 	$inputid = ( !empty( $atts['id'] ) ) ? 'id="' . $atts['id'] . '" ' : '';
