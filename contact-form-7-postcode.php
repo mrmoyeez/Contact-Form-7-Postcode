@@ -5,7 +5,7 @@ Plugin URI: https://github.com/markhall1971/Contact-Form-7-Postcode
 Description: Add UK postcode validation to Contact Form 7 plugin.
 Author: Mark Hall
 Author URI: http://sarkymarky.com
-Version: 1.0
+Version: 1.1
 Text Domain: contact-form-7-postcode
 */
 
@@ -69,6 +69,12 @@ function wpcf7_postcode_shortcode_handler( $tag )
 	$atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
 	$atts['validation_error'] = $validation_error;
 	$atts['aria-invalid'] = $validation_error ? 'true' : 'false';
+
+	$value = (string) reset( $tag->values );
+	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
+		$atts['placeholder'] = $value;
+		$value = '';
+	}
 
 	if ( $tag->is_required() )
 		$atts['aria-required'] = 'true';
