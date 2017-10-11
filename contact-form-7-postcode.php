@@ -5,7 +5,7 @@ Plugin URI: https://github.com/markhall1971/Contact-Form-7-Postcode
 Description: Add UK postcode validation to Contact Form 7 plugin.
 Author: Mark Hall
 Author URI: http://sarkymarky.com
-Version: 1.0
+Version: 1.1
 Text Domain: contact-form-7-postcode
 */
 
